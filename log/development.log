@@ -38,3 +38,258 @@ Started GET "/" for ::1 at 2015-11-18 13:37:10 -0600
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/admin/.rvm/gems/ruby-2.1.2/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
 Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:37:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 738ms (Views: 731.1ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:40:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `name' for #<Student:0x007fd18aaae5c0>):
+    2: 
+    3: <li>
+    4: <% @students.each do |student|%>
+    5: <ul> <%=student.name%></ul>
+    6: <%end%>
+    7: </li>
+  app/views/students/index.html.erb:5:in `block in _app_views_students_index_html_erb__4112447986146075625_70268980531180'
+  app/views/students/index.html.erb:4:in `_app_views_students_index_html_erb__4112447986146075625_70268980531180'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.8ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.6ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (119.6ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:41:54 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    2: 
+    3: <li>
+    4: <% @students.each do |student|%>
+    5: <ul> <%=student.to_s%></ul>
+    6: <%end%>
+    7: </li>
+  app/models/student.rb:3:in `to_s'
+  app/views/students/index.html.erb:5:in `block in _app_views_students_index_html_erb__4112447986146075625_70268972122640'
+  app/views/students/index.html.erb:4:in `_app_views_students_index_html_erb__4112447986146075625_70268972122640'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.5ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.0ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:42:19 -0500
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/MaxGentle/Development/mod2/rails/rails-restful-index-action-lab-web-103017/app/views/students/index.html.erb:5: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...less student.nil? student.to_s);@output_buffer.safe_append='...
+...                               ^
+/Users/MaxGentle/Development/mod2/rails/rails-restful-index-action-lab-web-103017/app/views/students/index.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+/Users/MaxGentle/Development/mod2/rails/rails-restful-index-action-lab-web-103017/app/views/students/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/MaxGentle/Development/mod2/rails/rails-restful-index-action-lab-web-103017/app/views/students/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/students/index.html.erb:5: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/students/index.html.erb:6: syntax error, unexpected keyword_end, expecting ')'
+  app/views/students/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/students/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.1ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.8ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:42:31 -0500
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/MaxGentle/Development/mod2/rails/rails-restful-index-action-lab-web-103017/app/views/students/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+...ss student.nil? == true student.to_s);@output_buffer.safe_ap...
+...                               ^):
+  app/views/students/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.0ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.5ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.7ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:42:38 -0500
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/MaxGentle/Development/mod2/rails/rails-restful-index-action-lab-web-103017/app/views/students/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+...ss student.nil? == true student.to_s;@output_buffer.safe_app...
+...                               ^):
+  app/views/students/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.9ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.7ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (99.3ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:42:52 -0500
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    2: 
+    3: <li>
+    4: <% @students.each do |student|%>
+    5: <ul> <%student.to_s unless student.nil? %></ul>
+    6: <%end%>
+    7: </li>
+  app/models/student.rb:3:in `to_s'
+  app/views/students/index.html.erb:5:in `block in _app_views_students_index_html_erb__4112447986146075625_70268972944640'
+  app/views/students/index.html.erb:4:in `_app_views_students_index_html_erb__4112447986146075625_70268972944640'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.8ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.6ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.2ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:43:06 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    2: 
+    3: <li>
+    4: <% @students.each do |student|%>
+    5: <ul> <%student.to_s unless student.nil? == true%></ul>
+    6: <%end%>
+    7: </li>
+  app/models/student.rb:3:in `to_s'
+  app/views/students/index.html.erb:5:in `block in _app_views_students_index_html_erb__4112447986146075625_70268985382800'
+  app/views/students/index.html.erb:4:in `_app_views_students_index_html_erb__4112447986146075625_70268985382800'
+
+
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.7ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MaxGentle/.rvm/gems/ruby-2.3.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (101.5ms)
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students"  ORDER BY "students"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.4ms)[0m  commit transaction
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:43:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 142ms (Views: 133.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:43:37 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:43:50 -0500
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.1ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/students" for ::1 at 2017-11-27 14:44:19 -0500
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.1ms)
